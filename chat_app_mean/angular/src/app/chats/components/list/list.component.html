@@ -1,0 +1,34 @@
+<h2>My Unread Messages</h2>
+<table>
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>Date Sent</th>
+            <th>View Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of unseen_array; let i = index">
+            <td [innerHTML]="field.username_from"></td>
+            <td [innerHTML]="field.datetime_created"></td>
+            <td><a routerLink="/chat/{{field._id}}">View Message</a></td>
+        </tr>
+    </tbody>
+</table>
+<h2>My Older Messages</h2>
+<table>
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>Date Sent</th>
+            <th>View Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field2 of seen_array; let i = index">
+            <td [innerHTML]="field2.username_from"></td>
+            <td [innerHTML]="field2.datetime_created"></td>
+            <td><a routerLink="/chat/{{field2._id}}">View Message</a></td>
+        </tr>
+    </tbody>
+</table>

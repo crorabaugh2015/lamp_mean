@@ -1,0 +1,39 @@
+<div class = 'row m-0 w-100'>
+    <div class = 'col-md-4 offset-4 mt-5'>
+        <h4>Get Water Levels</h4>
+        <form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+            <div class = 'form-group'>
+                <input class = 'form-control' type = "text" name = "date1" placeholder = "Start" ngModel>
+            </div>
+            <div class = 'form-group'>
+                <input class = 'form-control' type = "text" name = "date2" placeholder = "End" ngModel>
+            </div>
+            <input class= 'btn btn-outline-info' type = "submit" value = "Submit">
+        </form>
+    </div>
+</div>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Data Source</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Station Id</th>
+            <th>Station Name</th>
+            <th>Sample Date</th>
+            <th>Height (ft)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of dateArray; let i = index">
+            <td [innerHTML]="field.DataSource"></td>
+            <td [innerHTML]="field.Latitude_DD"></td>
+            <td [innerHTML]="field.Longitude_DD"></td>
+            <td [innerHTML]="field.StationID"></td>
+            <td [innerHTML]="field.StationName"></td>
+            <td [innerHTML]="field.SampleDate"></td>
+            <td [innerHTML]="field.ResultValue"></td>
+        </tr>
+    </tbody>
+</table>
