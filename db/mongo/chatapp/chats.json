@@ -1,0 +1,4 @@
+{"_id":{"$oid":"627842727ea0a3d2a54e4915"},"username_from":"test","username_to":"test2","message":"Hello1","seen":1,"datetime_created":{"$date":"2022-05-08T22:21:38.964Z"}}
+{"_id":{"$oid":"627842827ea0a3d2a54e4916"},"username_from":"test","username_to":"test2","message":"Hello2","seen":1,"datetime_created":{"$date":"2022-05-08T22:21:54.894Z"}}
+{"_id":{"$oid":"627c2ca4fabcdde083e6e2a1"},"username_from":"chris2","username_to":"chris","message":"hello","seen":1,"datetime_created":{"$date":"2022-05-11T21:37:40.282Z"}}
+{"_id":{"$oid":"62a374f668e649afee8f4faf"},"username_from":"test","username_to":"victim","message":"victim message","seen":0,"datetime_created":{"$date":"2022-06-10T16:44:38.193Z"}}
