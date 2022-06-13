@@ -32,28 +32,27 @@ require_once('dbconn.php');
         </nav>
         <div style="padding:20px 50px">
             <h4>Get Water Levels</h4>
-        <form action="" method="post">
+        <form action="" method="get">
             <table cellpadding="2">
             <tr>
-                <td><label for="login-name">Start Date</label></td><td><input class="block" autofocus type="text" name="date1" /></td>
+                <td><label>Start Date</label></td><td><input class="block" autofocus type="text" name="date1" /></td>
             </tr>
             <tr>
-                <td><label for="login-pass">End Date</label></td><td><input class="block" type="text" name="date2" /></td>
+                <td><label>End Date</label></td><td><input class="block" type="text" name="date2" /></td>
             </tr>
             <tr>
                 <td><button type="submit">Submit</button></td>
             </tr>
             </table>
-            <input type="hidden" value="submitted" name="submitted" />
         </form>
 
 <?php
-if (isset($_POST['submitted'])) {
+if (isset($_GET['date1']) && isset($_GET['date2'])) {
     if (!$selection = $db->prepare("SELECT id, DataSource, StationID, StationName, Latitude_DD, Longitude_DD, SampleDate, ResultValue FROM riverdata WHERE SampleDate >= ? AND SampleDate <= ? ORDER BY SampleDate ASC")) {
         error_log("PHP MySQL Prepare Statement failed: ".$db->error, 0);
         echo '<h2>Error reading messages!1</h2>';
     }
-    if (!$selection->bind_param("ss", $_POST['date1'], $_POST['date2'])) {
+    if (!$selection->bind_param("ss", $_GET['date1'], $_GET['date2'])) {
         error_log("PHP MySQL Bind Param Statement failed: ".$db->error, 0);
         echo '<h2>Error reading messages!2</h2>';
     }
